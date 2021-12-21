@@ -1,0 +1,32 @@
+{
+  "name": "tezos-api",
+  "version": "1.0.0",
+  "description": "API to get info of tezos chain",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlacloc/tezos-api.git" 
+  },
+  "scripts": {
+    "initAll": "node scripts/commands.js init",
+    "initContract": "node scripts/commands.js run $1",
+    "setParams": "node scripts/commands.js set params",
+    "setPermissions": "node scripts/commands.js set permissions",
+    "test": "mocha --timeout 15000"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlacloc/tezos-api/issues"
+  },
+  "homepage": "https://github.com/tlacloc/tezos-api#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "promisify": "^0.0.3",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2"
+  }
+}
