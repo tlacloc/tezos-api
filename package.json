@@ -8,10 +8,9 @@
     "url": "git+https://github.com/tlacloc/tezos-api.git" 
   },
   "scripts": {
-    "initAll": "node scripts/commands.js init",
-    "initContract": "node scripts/commands.js run $1",
-    "setParams": "node scripts/commands.js set params",
-    "setPermissions": "node scripts/commands.js set permissions",
+    "token" : "node main.js get token $1",
+    "tokens" : "node main.js get token $1",
+    "collections" : "node main.js get collections $1",
     "test": "mocha --timeout 15000"
   },
   "author": "",
