@@ -4,14 +4,15 @@ async function get_communities ( pkh ) {
   https.get(`https://api.better-call.dev/v1/account/mainnet/${pkh}/count_with_metadata`, (resp) => {
   let data = '';
 
-  // A chunk of data has been received.
   resp.on('data', (chunk) => {
     data += chunk;
   });
 
-  // The whole response has been received. Print out the result.
   resp.on('end', () => {
-    console.log(JSON.parse(data));
+    //console.log(JSON.parse(data));
+    
+    return( data )
+
   });
 
   }).on("error", (err) => {
@@ -20,6 +21,26 @@ async function get_communities ( pkh ) {
   
 }
 
+async function get_token ( pkh, contract ) {
+  https.get(`https://api.better-call.dev/v1/account/mainnet/${pkh}/token_balances?contract=${contract}`, (resp) => {
+  let data = '';
+
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  resp.on('end', () => {
+    // console.log(JSON.parse(data));
+    
+    return( data )
+
+  });
+
+  }).on("error", (err) => {
+    console.log("Error: " + err.message);
+  });
+
+}
 
 
 async function get_fans ( phk ) {
@@ -28,5 +49,8 @@ async function get_fans ( phk ) {
 
 module.exports = {
   get_communities,
+  get_token,
   get_fans
 }
+
+
